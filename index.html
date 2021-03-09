@@ -39,6 +39,10 @@
                 result.innerHTML=`Por favor, informe um valor válido`
                 return 
             }
+            if (d<0) {
+                result.innerHTML=`<p>Impossível calcular com delta negativo</p>`
+                return
+            }
 
          let d = b **2-4*parseFloat(a)*parseFloat(c)
          let x1 = (-parseFloat(b)+Math.sqrt(d))/(2*parseFloat(a))
