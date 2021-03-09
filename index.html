@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 03</title>
+</head>
+<body>
+    <h1>Exemplo 3</h1>
+    <p>Calculo da Formula de Bhaskara</p>
+
+    <form id="form">
+        <input id="field1" type="number" placeholder="Digite o valor de A">
+        <input id="field2" type="number" placeholder="Digite o valor de B">
+        <input id="field3" type="number" placeholder="Digite o valor de C">
+        <button>Calcular</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function onsubmit(event) {
+            event.preventDefault()
+            let a = parseFloat(field1.value)
+            let b = parseFloat(field2.value)
+            let c = parseFloat(field3.value)
+
+
+            if (isNaN(a)) {
+                result.innerHTML=`Por favor, informe um valor válido`
+                return  
+            }
+ 
+            if (isNaN(b)) {
+               result.innerHTML=`Por favor, informe um valor válido`
+                return 
+            }
+
+            if (isNaN(c)) {
+                result.innerHTML=`Por favor, informe um valor válido`
+                return 
+            }
+
+         let d = b **2-4*parseFloat(a)*parseFloat(c)
+         let x1 = (-parseFloat(b)+Math.sqrt(d))/(2*parseFloat(a))
+         let x2 = (-parseFloat(b)-Math.sqrt(d))/(2*parseFloat(a))
+
+
+         result.innerHTML=`O resultado dos valores ${a}, ${b} e ${c} são ${x1} e ${x2}`
+
+        }
+
+        form.addEventListener("submit", onsubmit)
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 03</title>
+</head>
+<body>
+    <h1>Calculo com as quatro operações aritmética basicas </h1>
+
+    <form id="form">
+        <input id="field1" type="number" placeholder="Digite um Valor">
+        <input id="field2" type="number" placeholder="Digite o segundo Valor">
+        <button>Calcular</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function onsubmit(event) {
+            event.preventDefault()
+            let n1 = parseFloat(field1.value)
+            let n2 = parseFloat(field2.value)
+
+            if (isNaN(n1)) {
+                result.innerHTML=`Por favor, informe um valor válido`
+                return  
+            }
+
+            if (isNaN(n2)) {
+                result.innerHTML=`Por favor, informe um valor válido`
+                return  
+            }
+
+            let m = parseFloat(n1) + parseFloat(n2)
+            let s = parseFloat(n1) - parseFloat(n2)
+            let d = parseFloat(n1) / parseFloat(n2)
+            let r = parseFloat(n1) * parseFloat(n2)
+
+            result.innerHTML=`O resultado das quatro operações com ${n1} e ${n2} é <b>${m}</b>,${s}, ${d} e ${r}.`    
+        }
+
+        form.addEventListener("submit", onsubmit)
+
+
+
+    </script>
+</body>
+</html>
